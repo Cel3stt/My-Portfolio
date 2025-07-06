@@ -13,14 +13,11 @@ import Timeline from '@/components/ui/About-Me'
 
 const Home = () => {
     const navItems = [
-        { name: 'Home', url: '#', icon: HomeIcon },
-
-        { name: 'About', url: '#', icon: User },
-        { name: 'Projects', url: '#', icon: Briefcase },
-        { name: 'Contact', url: '#', icon: FileText },
+        { name: 'Home', url: '/', icon: HomeIcon },
+        { name: 'About', url: '/about', icon: User },
+        { name: 'Projects', url: '/projects', icon: Briefcase },
+        { name: 'Contact', url: '/contact', icon: FileText },
         { name: 'Resume', url: '/Celest_Jerez_Resume.pdf', icon: Paperclip, download: true },
-
-
       ]
 
 
@@ -157,13 +154,13 @@ return (
       </section>
   
       {/* -------------------SKILLS SECTION-------------------- */}
-      <section className="py-24">
+      <section className="pt-24">
         <SkillShowcase />
       </section>
 
    
 
-      <section className="py-24">
+      <section className="pt-[-64]">
         <div className="text-center ">
           <AnimatedText
             text="Let's Connect"

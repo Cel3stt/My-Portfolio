@@ -169,7 +169,7 @@ const SkillShowcase = () => {
   return (
     <div className="relative min-h-screen ">
       <div
-        className={`max-w-6xl mx-auto rounded-lg bg-[#fef8fc] px-4 py-12 transition-all duration-1000 ease-out `}
+        className={`max-w-6xl mx-auto rounded-lg bg-[#fef8fc] px-4 py-12 transition-all duration-1000 ease-out  `}
       >
         <div className="text-center mb-16">
              <AnimatedText  text="Skills & Tools"
