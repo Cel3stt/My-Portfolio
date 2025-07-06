@@ -12,14 +12,13 @@ import Timeline from '@/components/ui/About-Me'
 
 
 const Home = () => {
-    const navItems = [
-        { name: 'Home', url: '/', icon: HomeIcon },
-        { name: 'About', url: '/about', icon: User },
-        { name: 'Projects', url: '/projects', icon: Briefcase },
-        { name: 'Contact', url: '/contact', icon: FileText },
-        { name: 'Resume', url: '/Celest_Jerez_Resume.pdf', icon: Paperclip, download: true },
-      ]
-
+     const navItems = [
+    { name: 'Home', url: '/', icon: HomeIcon },
+    { name: 'About', url: '/about', icon: User },
+    { name: 'Projects', url: '/projects', icon: Briefcase },
+    { name: 'Contact', url: '/contact', icon: FileText },
+    { name: 'Resume', url: '/Celest_Jerez_Resume.pdf', icon: Paperclip, download: true },
+  ]
 
       const AboutMe = [
         {
