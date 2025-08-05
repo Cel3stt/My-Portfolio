@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { Link } from "react-router-dom"
 export function NavBar({
   items,
   className
@@ -9,15 +8,64 @@ export function NavBar({
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
 
+  const handleNavClick = (item) => {
+    setActiveTab(item.name)
+    
+    // Handle smooth scrolling for anchor links
+    if (item.url.startsWith('#')) {
+      const element = document.querySelector(item.url)
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        })
+      }
+    }
+  }
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
     }
 
+    const handleScroll = () => {
+      const sections = items.filter(item => item.url.startsWith('#'))
+      const scrollPosition = window.scrollY + 200 // Increased offset for better detection
+
+      let currentSection = sections[0]?.name || 'Home'
+
+      for (let i = 0; i < sections.length; i++) {
+        const section = sections[i]
+        const element = document.querySelector(section.url)
+        
+        if (element) {
+          const sectionTop = element.offsetTop
+          const sectionBottom = sectionTop + element.offsetHeight
+          
+          // Check if scroll position is within this section
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            currentSection = section.name
+            break
+          }
+          // If we're past all sections, use the last one
+          else if (scrollPosition >= sectionTop) {
+            currentSection = section.name
+          }
+        }
+      }
+
+      setActiveTab(currentSection)
+    }
+
     handleResize()
     window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize);
-  }, [])
+    window.addEventListener("scroll", handleScroll)
+    
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [items])
 
   return (
     (<div
@@ -75,14 +123,17 @@ export function NavBar({
       {content}
     </a>
   ) : (
-    <Link
+    <a
       key={item.name}
-      to={item.url}
+      href={item.url}
       className={commonClasses}
-      onClick={() => setActiveTab(item.name)}
+      onClick={(e) => {
+        e.preventDefault()
+        handleNavClick(item)
+      }}
     >
       {content}
-    </Link>
+    </a>
   );
 })}
 

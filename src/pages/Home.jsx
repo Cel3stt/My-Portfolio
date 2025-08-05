@@ -13,10 +13,10 @@ import Timeline from '@/components/ui/About-Me'
 
 const Home = () => {
      const navItems = [
-    { name: 'Home', url: '/', icon: HomeIcon },
-    { name: 'About', url: '/about', icon: User },
-    { name: 'Projects', url: '/projects', icon: Briefcase },
-    { name: 'Contact', url: '/contact', icon: FileText },
+    { name: 'Home', url: '#home', icon: HomeIcon },
+    { name: 'About', url: '#about', icon: User },
+    { name: 'Projects', url: '#projects', icon: Briefcase },
+    { name: 'Contact', url: '#contact', icon: FileText },
     { name: 'Resume', url: '/Celest_Jerez_Resume.pdf', icon: Paperclip, download: true },
   ]
 
@@ -134,12 +134,12 @@ return (
       <NavBar items={navItems} />
   
       {/* -------------------HERO SECTION-------------------- */}
-      <section className="py-24">
+      <section id="home" className="py-24">
         <Hero />
       </section>
   
       {/* -------------------PROJECTS SECTION-------------------- */}
-      <section className="py-24">
+      <section id="projects" className="py-24">
         <div className="text-center mb-24">
           <AnimatedText
             text="Projects"
@@ -159,7 +159,7 @@ return (
 
    
 
-      <section className="pt-[-64]">
+      <section id="contact" className="pt-[-64]">
         <div className="text-center ">
           <AnimatedText
             text="Let's Connect"
@@ -176,7 +176,7 @@ return (
   
   
       {/* -------------------TIMELINE / STICKY SCROLL SECTION-------------------- */}
-      <section className="py-24">
+      <section id="about" className="py-24">
         <Timeline/>
       </section>
 
