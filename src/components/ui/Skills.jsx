@@ -18,8 +18,11 @@ const logoPlaceholders = {
   GitHub: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
   VSCode: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
   Vite: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
-  shadcn: "/placeholder.svg?height=80&width=80", // No public logo available
+  shadcn: "https://ui.shadcn.com/favicon.ico", // No public logo available
   Bootstrap: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg",
+  TypeScript: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+  NextJS: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
+  MongoDB: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
 }
 
 // SkillCard Component
@@ -162,6 +165,24 @@ const SkillShowcase = () => {
       id: 13,
       name: "Bootstrap",
       message: "Responsive design!",
+      offset: 0,
+    },
+    {
+      id: 14,
+      name: "TypeScript",
+      message: "Strongly typed programming language!",
+      offset: 0,
+    },
+    {
+      id: 15,
+      name: "Next.js",
+      message: "React framework for production",
+      offset: 0,
+    },
+    {
+      id: 16,
+      name: "MongoDB",
+      message: "NoSQL database for modern apps",
       offset: 0,
     },
   ]
